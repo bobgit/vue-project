@@ -9,7 +9,7 @@ This template should help get you started developing with Vue 3 in Vite.
 ## Recommended Browser Setup
 
 - Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
+  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
   - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
 - Firefox:
   - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
@@ -52,3 +52,16 @@ pnpm test:unit
 ```sh
 pnpm lint
 ```
+
+安装：
+pnpm add unplugin-vue-components -D
+可以使用：
+import Components from "unplugin-vue-components/vite"
+import { VantResolver, ElementPlusResolver } from "unplugin-vue-components/resolvers"
+
+pnpm add element-plus -D
+pnpm add vant -D
+pnpm remove element-plus
+pnpm remove vant
+pnpm add element-plus 
+pnpm add vant 
