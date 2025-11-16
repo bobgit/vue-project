@@ -63,5 +63,57 @@ pnpm add element-plus -D
 pnpm add vant -D
 pnpm remove element-plus
 pnpm remove vant
-pnpm add element-plus 
-pnpm add vant 
+pnpm add element-plus
+pnpm add vant
+
+vite.config.ts--->
+
+# Vue3 Multiport Template
+
+双端（mobile + pc）模板，Vue3 + TS + Vite + Pinia + Axios，移动端使用 Vant，PC 端使用 Element Plus。
+
+启动：
+
+```bash
+npm install
+npm run dev:mobile
+npm run dev:pc
+```
+
+ESLint + Prettier
+pnpm add -D eslint prettier eslint-config-prettier eslint-plugin-vue \
+ @typescript-eslint/parser @typescript-eslint/eslint-plugin \
+ eslint-config-airbnb-base eslint-plugin-import
+
+pnpm add -D openapi-typescript-codegen
+pnpm api:gen
+
+整体流程图（简化版）
+index.html
+↓ (Vite 注入入口脚本)
+main.ts
+↓ (创建 Vue 应用实例)
+App.vue
+↓ (作为根组件挂载到 #app)
+页面渲染
+
+而 vite.config.ts 是整个过程的 构建指挥官，控制：
+
+入口文件是哪个（main.ts）
+如何处理 .vue 文件
+开发服务器行为
+构建输出结构等
+
+pnpm run dev
+pnpm run dev:m
+pnpm run dev:p
+
+tsconfig.json
+├── tsconfig.app.json → 编译 src/（浏览器端）
+├── tsconfig.node.json → 编译 vite.config.ts 等（Node 端）
+└── tsconfig.vitest.json → 编译测试文件
+
+env.d.ts → 全局类型声明（.vue, import.meta.env）
+
+vite.config.ts → 构建/开发配置
+vitest.config.ts → 测试运行配置（基于 Vite）

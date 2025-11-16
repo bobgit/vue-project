@@ -1,13 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
     <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <script>
+      // 简单 UA 判断即可，复杂度可换 u-parse
+      const isMobile =
+        /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) && screen.width <= 768
+      const entry = isMobile ? '/src/mobile/main-mobile.ts' : '/src/pc/main-pc.ts'
+      console.info('index.html----------进入这个页面--main-------------------' + entry)
+      document.write(`<script type="module" src="${entry}"><\/script>`)
+      console.info('-index.html---------进入这个页面--main-------------------')
+    </script>
   </body>
 </html>
