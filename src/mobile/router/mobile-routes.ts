@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
   { path: '/', component: () => import('@/mobile/Home.vue') },
@@ -7,6 +7,6 @@ const routes = [
 
 export default createRouter({
   // history: createWebHistory('/src/mobile/'), // 在移动端的路由历史中添加前缀
-  history: createWebHistory(''), // 在移动端的路由历史中添加前缀
+  history: createWebHashHistory(''), // 在移动端的路由历史中添加前缀
   routes,
 })
