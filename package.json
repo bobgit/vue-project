@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "vite --config vite.config.ts --port 3000",
-    "dev:m": "vite --config vite.mobile.ts --port 3001 --open indexMobile.html",
+    "dev:m": "vite --config vite.mobile.ts --port 3001 --open src/mobile/mobile.html",
     "dev:p": "vite --config vite.pc.ts --port 3002 --open src/pc/pc.html",
     "build": "run-p type-check \"build-only {@}\" --",
     "build:m": "vite build --config main-mobile.ts",

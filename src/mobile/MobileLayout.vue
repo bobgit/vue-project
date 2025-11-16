@@ -1,4 +1,4 @@
 <template>
-  <van-nav-bar title="Mobile" />
+  <van-nav-bar title="MobileInfo" />
   <router-view />
 </template>

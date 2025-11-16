@@ -6,7 +6,6 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import Components from 'unplugin-vue-components/vite'
 import { VantResolver, ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
-
 console.info('调查，目前进入vite.config.ts主要配置')
 // https://vite.dev/config/
 export default defineConfig({
