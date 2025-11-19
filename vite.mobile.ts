@@ -6,13 +6,14 @@ import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import Components from 'unplugin-vue-components/vite'
 import { VantResolver, ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import tailwindcss from '@tailwindcss/vite'
 
 console.info('调查，目前进入vite.mobile.ts主要配置')
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
-
+    tailwindcss(),
     // 按需自动引入 Vant + ElementPlus
     Components({
       dts: 'src/components.d.ts',

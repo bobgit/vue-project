@@ -1,6 +1,7 @@
 // 添加日志，确认 main-pc.ts 被加载
 console.info('Loading main-pc.ts...');
 
+import '../share/assets/main.css'
 import { createApp } from 'vue'
 import PcLayout from '@/pc/layouts/PcLayout.vue'
 import router from '@/pc/router/pc-routes'
